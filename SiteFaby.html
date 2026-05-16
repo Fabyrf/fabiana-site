@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fabiana Rodrigues | Gestão Estratégica</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+position:relative;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:500px;
+height:500px;
+background:rgba(212,175,55,.05);
+filter:blur(120px);
+top:-100px;
+right:-100px;
+z-index:-1;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:400px;
+height:400px;
+background:rgba(212,175,55,.03);
+filter:blur(120px);
+bottom:-100px;
+left:-100px;
+z-index:-1;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.82);
+backdrop-filter:blur(14px);
+border-bottom:1px solid #1a1a1a;
+z-index:999;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+}
+
+.logo span{
+color:#d4af37;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:24px;
+font-size:14px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+/* GERAL */
+
+section{
+padding:80px 8%;
+}
+
+.title{
+font-size:38px;
+margin-bottom:45px;
+color:#d4af37;
+position:relative;
+display:inline-block;
+}
+
+.title::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-10px;
+width:70%;
+height:3px;
+background:#d4af37;
+border-radius:20px;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+padding-top:120px;
+}
+
+.hero-text{
+max-width:720px;
+}
+
+.tag{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:10px 20px;
+border-radius:50px;
+background:#101010;
+border:1px solid #1f1f1f;
+color:#d4af37;
+font-size:13px;
+margin-bottom:24px;
+}
+
+.hero-text h1{
+font-size:88px;
+line-height:.95;
+margin-bottom:24px;
+font-weight:800;
+}
+
+.hero-text p{
+font-size:17px;
+line-height:1.8;
+color:#c8c8c8;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:15px 34px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(212,175,55,.25);
+}
+
+/* FOTO */
+
+.hero-img{
+position:relative;
+}
+
+.hero-img::before{
+content:'';
+position:absolute;
+inset:-12px;
+border:1px solid rgba(212,175,55,.15);
+border-radius:32px;
+z-index:-1;
+}
+
+.hero-img img{
+width:430px;
+max-width:100%;
+border-radius:26px;
+object-fit:cover;
+border:2px solid #1f1f1f;
+box-shadow:0 0 35px rgba(212,175,55,.10);
+transition:.5s;
+}
+
+.hero-img img:hover{
+transform:scale(1.02);
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:18px;
+}
+
+.box{
+background:rgba(16,16,16,.88);
+padding:28px;
+border-radius:22px;
+border:1px solid #1f1f1f;
+transition:.4s;
+}
+
+.box:hover{
+transform:translateY(-6px);
+border-color:#d4af37;
+}
+
+.box i{
+font-size:26px;
+color:#d4af37;
+margin-bottom:16px;
+}
+
+.box h3{
+font-size:21px;
+margin-bottom:14px;
+}
+
+.box p{
+line-height:1.8;
+color:#c8c8c8;
+font-size:15px;
+}
+
+/* TIMELINE */
+
+.timeline{
+border-left:2px solid #d4af37;
+padding-left:28px;
+}
+
+.item{
+position:relative;
+margin-bottom:45px;
+padding-bottom:22px;
+border-bottom:1px solid #1b1b1b;
+}
+
+.item:last-child{
+border-bottom:none;
+}
+
+.item::before{
+content:'';
+position:absolute;
+left:-37px;
+top:7px;
+width:14px;
+height:14px;
+background:#d4af37;
+border-radius:50%;
+}
+
+.item h3{
+font-size:25px;
+margin-bottom:8px;
+}
+
+.item span{
+font-size:13px;
+color:#999;
+display:block;
+margin-bottom:14px;
+}
+
+.item p{
+line-height:1.9;
+color:#c8c8c8;
+font-size:15px;
+}
+
+/* RESULTADOS */
+
+.results{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-top:20px;
+}
+
+.result-box{
+background:#101010;
+padding:28px;
+border-radius:22px;
+text-align:center;
+border:1px solid #1f1f1f;
+transition:.4s;
+}
+
+.result-box:hover{
+transform:translateY(-6px);
+border-color:#d4af37;
+}
+
+.result-box h2{
+font-size:38px;
+color:#d4af37;
+margin-bottom:8px;
+}
+
+.result-box p{
+color:#bdbdbd;
+line-height:1.7;
+font-size:14px;
+}
+
+/* SKILLS */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skill{
+padding:12px 20px;
+background:#111;
+border:1px solid #222;
+border-radius:40px;
+transition:.3s;
+font-size:13px;
+}
+
+.skill:hover{
+background:#d4af37;
+color:black;
+}
+
+/* CONTATO */
+
+.contact{
+text-align:center;
+}
+
+.contact-card{
+max-width:820px;
+margin:auto;
+padding:40px;
+background:#101010;
+border:1px solid #1f1f1f;
+border-radius:26px;
+}
+
+.contact-card p{
+font-size:17px;
+line-height:1.9;
+color:#c8c8c8;
+}
+
+.contact-card a{
+color:#d4af37;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+padding:25px;
+text-align:center;
+color:#777;
+border-top:1px solid #1b1b1b;
+margin-top:20px;
+font-size:14px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:950px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:58px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Fabiana<span>.</span>
+</div>
+
+<nav>
+<a href="#sobre">Sobre</a>
+<a href="#experiencia">Experiência</a>
+<a href="#skills">Competências</a>
+<a href="#contato">Contato</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<div class="tag">
+<i class="fa-solid fa-chart-line"></i>
+Gestão • Contratos • Tecnologia
+</div>
+
+<h1>
+Fabiana<br>
+Rodrigues
+</h1>
+
+<p>
+Supervisora Administrativa,
+Desenvolvedora Web
+e estudante de Análise e Desenvolvimento de Sistemas.
+
+Experiência sólida em contratos públicos,
+compras estratégicas,
+logística,
+construção civil,
+gestão operacional
+e automação de processos.
+
+Perfil voltado para organização,
+liderança,
+resolução de problemas
+e desenvolvimento de soluções práticas para melhoria contínua.
+</p>
+
+<a href="#contato" class="btn">
+<i class="fa-solid fa-paper-plane"></i>
+Entrar em contato
+</a>
+
+</div>
+
+<div class="hero-img">
+
+<img src="fabiana.jpg" alt="Fabiana Rodrigues">
+
+</div>
+
+</section>
+
+<section id="sobre">
+
+<h2 class="title">
+Sobre Mim
+</h2>
+
+<div class="grid">
+
+<div class="box">
+
+<i class="fa-solid fa-gears"></i>
+
+<h3>
+Automação & Processos
+</h3>
+
+<p>
+Desenvolvimento de planilhas inteligentes,
+automatização de controles operacionais
+e melhoria de processos administrativos,
+buscando mais eficiência,
+organização
+e redução de retrabalho.
+</p>
+
+</div>
+
+<div class="box">
+
+<i class="fa-solid fa-code"></i>
+
+<h3>
+Desenvolvimento Web
+</h3>
+
+<p>
+Criação de interfaces modernas,
+sites responsivos
+e soluções digitais voltadas para automação,
+organização operacional
+e melhoria de produtividade.
+</p>
+
+</div>
+
+<div class="box">
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+<h3>
+Perfil Técnico
+</h3>
+
+<p>
+Vivência prática em obras,
+manuseio de ferramentas elétricas,
+montagem,
+manutenção
+e solução de problemas operacionais com foco em execução eficiente.
+</p>
+
+</div>
+
+<div class="box">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>
+Visão Estratégica
+</h3>
+
+<p>
+Facilidade em identificar falhas,
+reestruturar processos,
+implementar melhorias
+e aprender rapidamente novos sistemas de gestão e operação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experiencia">
+
+<h2 class="title">
+Experiência Profissional
+</h2>
+
+<div class="timeline">
+
+<div class="item">
+
+<h3>
+Tecnicall Engenharia
+</h3>
+
+<span>
+Evolução Profissional • Assistente Administrativa → Compradora → Compradora Pleno → Supervisora Administrativa e Preposta Contratual
+</span>
+
+<p>
+Construção de carreira sólida dentro da empresa através de crescimento interno baseado em desempenho,
+organização operacional
+e capacidade de liderança.
+
+Atuação estratégica em contratos públicos de alta responsabilidade,
+com participação direta em processos administrativos,
+compras técnicas,
+controle operacional,
+gestão de equipes,
+planejamento de demandas
+e acompanhamento contratual.
+
+Experiência ligada a contratos da Câmara dos Deputados,
+Hospital das Forças Armadas,
+ABIN
+e Ministério Público,
+atuando diretamente em operações administrativas,
+controle de fornecedores,
+negociações,
+organização documental
+e suporte à tomada de decisão.
+
+Perfil voltado para resolução de problemas,
+otimização de processos,
+redução de falhas operacionais
+e melhoria contínua das rotinas administrativas e contratuais.
+</p>
+
+</div>
+
+<div class="item">
+
+<h3>
+Vivence Construtora e Incorporadora
+</h3>
+
+<span>
+Assistente Administrativo • Construção Civil & Operação de Obras
+</span>
+
+<p>
+Atuação em rotinas administrativas,
+controle operacional,
+almoxarifado,
+recebimento de materiais,
+controle de estoque,
+organização logística
+e suporte às equipes de obra.
+
+Participação na ampliação da Faculdade Projeção
+e no Laboratório de Algodão da Abrapa,
+auxiliando no acompanhamento operacional das atividades
+e organização de materiais utilizados na execução dos projetos.
+
+Vivência prática em ambiente de construção civil,
+desenvolvendo conhecimento técnico sobre materiais,
+equipamentos,
+ferramentas
+e funcionamento operacional de obras.
+
+Experiência complementar em atividades práticas de canteiro,
+incluindo apoio em montagem,
+formas,
+acabamentos
+e utilização de ferramentas elétricas como martelete,
+furadeira,
+parafusadeira,
+serra circular
+e vibrador de concreto.
+</p>
+
+</div>
+
+<div class="item">
+
+<h3>
+Trash Ambiental
+</h3>
+
+<span>
+Evolução Profissional • Auxiliar Administrativo → Encarregada de Logística
+</span>
+
+<p>
+Participação ativa no período de expansão da empresa,
+atuando na estruturação operacional do setor responsável pelos grandes geradores de resíduos
+durante a implementação das novas exigências relacionadas à destinação correta de resíduos.
+
+Crescimento interno conquistado através de desempenho operacional,
+organização
+e capacidade de liderança,
+evoluindo de Auxiliar Administrativo até Encarregada de Logística.
+
+Responsável pela organização de rotas mais eficientes,
+alinhamento operacional das equipes,
+melhoria da comunicação interna
+e acompanhamento das demandas diárias da operação.
+
+Implantação de reuniões estratégicas voltadas para melhoria do relacionamento entre equipes,
+redução de conflitos operacionais,
+fortalecimento do ambiente de trabalho
+e identificação de colaboradores com destaque em desempenho e comprometimento.
+
+Atuação focada em eficiência operacional,
+organização logística,
+otimização de processos
+e melhoria contínua da operação.
+</p>
+
+</div>
+
+<div class="item">
+
+<h3>
+Grupo Meirelles
+</h3>
+
+<span>
+Estratégia Comercial • Expansão • Captação Digital
+</span>
+
+<p>
+Atuação voltada para expansão comercial,
+prospecção estratégica,
+desenvolvimento de networking
+e criação de novas parcerias comerciais.
+
+Identificação de oportunidades de crescimento através da ampliação da rede de contatos
+e fortalecimento das conexões comerciais,
+contribuindo diretamente para melhoria dos resultados da operação.
+
+Implementação de ferramentas digitais,
+automação de processos comerciais
+e utilização de APIs voltadas para captação em massa de novos clientes,
+aumentando alcance operacional
+e geração de oportunidades.
+
+Desempenho acima das metas estabelecidas pela empresa,
+mantendo média superior ao parâmetro de compensação durante o período de atuação.
+
+Perfil voltado para estratégia,
+crescimento operacional,
+uso de tecnologia aplicada ao comercial
+e desenvolvimento de soluções para aumento de performance.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Resultados & Destaques
+</h2>
+
+<div class="results">
+
+<div class="result-box">
+<h2>+10</h2>
+<p>Anos de experiência profissional</p>
+</div>
+
+<div class="result-box">
+<h2>5</h2>
+<p>Promoções internas por desempenho</p>
+</div>
+
+<div class="result-box">
+<h2>+5</h2>
+<p>Grandes contratos públicos</p>
+</div>
+
+<div class="result-box">
+<h2>80%</h2>
+<p>Resultados acima da média comercial</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="title">
+Competências
+</h2>
+
+<div class="skills">
+
+<div class="skill">Gestão Administrativa</div>
+<div class="skill">Compras Estratégicas</div>
+<div class="skill">Contratos Públicos</div>
+<div class="skill">Excel Avançado</div>
+<div class="skill">SAP</div>
+<div class="skill">TOTVS RM</div>
+<div class="skill">SIENGE</div>
+<div class="skill">Automação</div>
+<div class="skill">ERP</div>
+<div class="skill">Logística</div>
+<div class="skill">Planejamento</div>
+<div class="skill">Construção Civil</div>
+<div class="skill">Controle Operacional</div>
+<div class="skill">Análise de Dados</div>
+<div class="skill">Liderança</div>
+<div class="skill">Resolução de Problemas</div>
+<div class="skill">Desenvolvimento Web</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Formação & Certificações
+</h2>
+
+<div class="grid">
+
+<div class="box">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h3>
+Formação
+</h3>
+
+<p>
+Tecnólogo em Análise e Desenvolvimento de Sistemas
+— Universidade Paulista (2024 a 2026).
+
+Foco em Desenvolvimento Web,
+automação de processos,
+soluções administrativas inteligentes
+e criação de sistemas voltados para melhoria operacional.
+</p>
+
+</div>
+
+<div class="box">
+
+<i class="fa-solid fa-certificate"></i>
+
+<h3>
+Certificações
+</h3>
+
+<p>
+Excel,
+Word,
+Canva,
+Redes de Computadores,
+Sistema Operacional
+e Mestre de Obras.
+
+Facilidade em aprender novos sistemas,
+plataformas de gestão
+e ferramentas voltadas para automação e produtividade.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contato" class="contact">
+
+<h2 class="title">
+Contato
+</h2>
+
+<div class="contact-card">
+
+<p>
+<i class="fa-brands fa-whatsapp"></i>
+
+<a href="https://wa.me/5561995675785">
+(61) 99567-5785
+</a>
+</p>
+
+<br>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+
+<a href="mailto:fabiana20.rodrigues@gmail.com">
+fabiana20.rodrigues@gmail.com
+</a>
+</p>
+
+<br><br>
+
+<a href="mailto:fabiana20.rodrigues@gmail.com" class="btn">
+<i class="fa-solid fa-paper-plane"></i>
+Falar comigo
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 • Fabiana Rodrigues
+</footer>
+
+<script>
+
+const elements = document.querySelectorAll('.box,.item,.result-box');
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+{
+opacity:0,
+transform:'translateY(40px)'
+},
+{
+opacity:1,
+transform:'translateY(0)'
+}
+],{
+duration:700,
+fill:'forwards'
+});
+
+}
+
+});
+
+});
+
+elements.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
