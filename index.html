@@ -367,9 +367,36 @@ line-height:1.9;
 color:#c8c8c8;
 }
 
-.contact-card a{
-color:#d4af37;
+/* Botões duplos - WhatsApp e E-mail */
+.buttons-group{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.btn-contato{
+display:inline-flex;
+align-items:center;
+gap:12px;
+padding:14px 32px;
+background:#d4af37;
+color:black;
 text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:.4s;
+font-size:16px;
+}
+
+.btn-contato i{
+font-size:20px;
+}
+
+.btn-contato:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(212,175,55,.25);
 }
 
 /* FOOTER */
@@ -398,6 +425,17 @@ font-size:58px;
 
 nav{
 display:none;
+}
+
+.buttons-group{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+.btn-contato{
+width:80%;
+justify-content:center;
 }
 
 }
@@ -849,30 +887,16 @@ Contato
 
 <div class="contact-card">
 
-<p>
-<i class="fa-brands fa-whatsapp"></i>
-
-<a href="https://wa.me/5561995675785">
-(61) 99567-5785
+<!-- Dois botões: WhatsApp e E-mail, ambos dourados com letras pretas -->
+<div class="buttons-group">
+<a href="https://wa.me/5561995675785" class="btn-contato" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> WhatsApp
 </a>
-</p>
 
-<br>
-
-<p>
-<i class="fa-solid fa-envelope"></i>
-
-<a href="mailto:fabiana20.rodrigues@gmail.com">
-fabiana20.rodrigues@gmail.com
+<a href="mailto:fabiana20.rodrigues@gmail.com" class="btn-contato">
+<i class="fa-solid fa-envelope"></i> E-mail
 </a>
-</p>
-
-<br><br>
-
-<a href="mailto:fabiana20.rodrigues@gmail.com" class="btn">
-<i class="fa-solid fa-paper-plane"></i>
-Falar comigo
-</a>
+</div>
 
 </div>
 
